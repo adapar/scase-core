@@ -4,5 +4,5 @@ Feature: GUI initalization
 
   Scenario: Initialization
     Given I just turned on the core
-    Then the display should be empty
+    Then the window title should be SCASE
 
