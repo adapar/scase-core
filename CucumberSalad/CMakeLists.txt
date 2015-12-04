@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.9)
 
-project(CoreCucumber)
+project(CucumberSalad)
 
 set(SCASE_CORE_BASE_PATH ..)
 set(SCASE_CORE_APP_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/CoreApp)
@@ -81,15 +81,15 @@ if(Qt5_FOUND)
     qt5_wrap_cpp(SCASE_CORE_HEADERS_MOC ${SCASE_CORE_HEADERS})
     include_directories(${Qt5Core_INCLUDE_DIRS} ${Qt5Gui_INCLUDE_DIRS} ${Qt5Test_INCLUDE_DIRS} ${Qt5Xml_INCLUDE_DIRS} ${Qt5Multimedia_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS})
     set(QT_LIBRARIES ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Test_LIBRARIES} ${Qt5Xml_LIBRARIES} ${Qt5Multimedia_LIBRARIES} ${Qt5Widgets_LIBRARIES})
-    add_library(CoreAppCucumberLib ${SCASE_CORE_APP_INCLUDE_PATH}/mainwindow ${SCASE_CORE_HEADERS_MOC})
+    add_library(CucumberStepsLib ${SCASE_CORE_APP_INCLUDE_PATH}/mainwindow ${SCASE_CORE_HEADERS_MOC})
 
     if(Boost_UNIT_TEST_FRAMEWORK_FOUND)
         include_directories(${Boost_INCLUDE_DIRS})
-        add_executable(BoostSCASECoreAppSteps features/step_definitions/BoostSCASECoreAppSteps)
-        target_link_libraries(BoostSCASECoreAppSteps CoreAppCucumberLib CoreLib ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${CUKE_LIBRARIES} ${QT_LIBRARIES})
+        add_executable(CucumberSteps features/step_definitions/CucumberSteps)
+        target_link_libraries(CucumberSteps CucumberStepsLib CoreLib ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${CUKE_LIBRARIES} ${QT_LIBRARIES})
     endif()
 
     set(SCASE_CORE_SOURCES ${SCASE_CORE_APP_INCLUDE_PATH}/main.cpp ${SCASE_CORE_APP_INCLUDE_PATH}/mainwindow.cpp)
     add_executable(CoreApp ${SCASE_CORE_SOURCES} ${SCASE_CORE_HEADERS_MOC})
-    target_link_libraries(CoreApp ${QT_LIBRARIES} CoreLib)
+    target_link_libraries(CoreApp CoreLib ${QT_LIBRARIES})
 endif()

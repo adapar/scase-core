@@ -3,6 +3,6 @@
 echo "Tasting this delicious cucumber salad..."
 echo
 
-./BoostSCASECoreAppSteps >/dev/null &
-cd ../../CoreCucumber/
+./CucumberSteps >/dev/null &
+cd ../../CucumberSalad/
 cucumber
