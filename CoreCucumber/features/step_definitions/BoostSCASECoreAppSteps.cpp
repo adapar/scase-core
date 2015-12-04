@@ -5,10 +5,6 @@
 #include <cucumber-cpp/defs.hpp>
 
 #include <QApplication>
-//#include <QTextCodec>
-//#include <QTest>
-
-//#include <mainwindow.h>
 
 static int argc = 0;
 static QApplication app(argc, 0);
@@ -18,13 +14,8 @@ std::ostream& operator<< (std::ostream& out, const QString& val) { out << val; r
 
 GIVEN("^I just turned on the core$") {
     pending();
-//    QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf-8"));
-//    cucumber::ScenarioScope<MainWindow> mainWindow;
-    //QTest::qWaitForWindowShown(mainWindow.get());
 }
 
- THEN("^the window title should be SCASE$") {
-     pending();
-//     cucumber::ScenarioScope<MainWindow> mainWindow;
-//     BOOST_CHECK_EQUAL(mainWindow->windowTitle(), "SCASE");
- }
+THEN("^the window title should be SCASE$") {
+ pending();
+}
