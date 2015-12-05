@@ -32,8 +32,3 @@ HEADERS += \
     interfaces/IBrowserLevel.h \
     interfaces/IBrowserPresentationDelegate.h \
     interfaces/IPlugin.h
-
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}

@@ -30,3 +30,6 @@ HEADERS  += mainwindow.h
 INCLUDEPATH += $$PWD/../Lib
 
 LIBS += -L$$OUT_PWD/../Lib/ -lLib
+
+target.path = $$PWD/../output/bin
+INSTALLS += target

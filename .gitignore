@@ -4,3 +4,4 @@ sandbox
 **/*.user
 **/*.autosave
 *.bak
+output
