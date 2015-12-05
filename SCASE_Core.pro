@@ -1,9 +1,9 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    CoreApp \
-    CoreTest \
-    CoreLib
+    App \
+    Test \
+    Lib
 
-CoreApp.depends = CoreLib
-CoreTest.depends = CoreLib
+App.depends = Lib
+Test.depends = Lib

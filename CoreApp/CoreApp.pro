@@ -27,6 +27,6 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h
 
-INCLUDEPATH += $$PWD/../CoreLib
+INCLUDEPATH += $$PWD/../Lib
 
-LIBS += -L$$OUT_PWD/../CoreLib/ -lCoreLib
+LIBS += -L$$OUT_PWD/../Lib/ -lLib

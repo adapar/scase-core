@@ -1,3 +1,3 @@
 #include <QtTest/QTest>
-#include "CoreTest.h"
-QTEST_APPLESS_MAIN( CoreTest )
+#include "Test.h"
+QTEST_APPLESS_MAIN( Test )

@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 2.8.9)
 project(CucumberSalad)
 
 set(SCASE_CORE_BASE_PATH ..)
-set(SCASE_CORE_APP_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/CoreApp)
-set(SCASE_CORE_LIB_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/CoreLib)
+set(SCASE_CORE_APP_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/App)
+set(SCASE_CORE_LIB_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/Lib)
 set(SCASE_CORE_BUILD_PATH ${SCASE_CORE_BASE_PATH}/builds/Release)
 
 configure_file(taste_salad.sh taste_salad.sh COPYONLY)
 
-link_directories(${SCASE_CORE_BUILD_PATH}/CoreLib)
+link_directories(${SCASE_CORE_BUILD_PATH}/Lib)
 include_directories(${SCASE_CORE_APP_INCLUDE_PATH} ${SCASE_CORE_LIB_INCLUDE_PATH})
 
 #
@@ -86,10 +86,10 @@ if(Qt5_FOUND)
     if(Boost_UNIT_TEST_FRAMEWORK_FOUND)
         include_directories(${Boost_INCLUDE_DIRS})
         add_executable(CucumberSteps features/step_definitions/CucumberSteps)
-        target_link_libraries(CucumberSteps CucumberStepsLib CoreLib ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${CUKE_LIBRARIES} ${QT_LIBRARIES})
+        target_link_libraries(CucumberSteps CucumberStepsLib Lib ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${CUKE_LIBRARIES} ${QT_LIBRARIES})
     endif()
 
     set(SCASE_CORE_SOURCES ${SCASE_CORE_APP_INCLUDE_PATH}/main.cpp ${SCASE_CORE_APP_INCLUDE_PATH}/mainwindow.cpp)
-    add_executable(CoreApp ${SCASE_CORE_SOURCES} ${SCASE_CORE_HEADERS_MOC})
-    target_link_libraries(CoreApp CoreLib ${QT_LIBRARIES})
+    add_executable(App ${SCASE_CORE_SOURCES} ${SCASE_CORE_HEADERS_MOC})
+    target_link_libraries(App Lib ${QT_LIBRARIES})
 endif()

@@ -3,11 +3,11 @@
 
 #include <QObject>
 
-class CoreTest : public QObject
+class Test : public QObject
 {
     Q_OBJECT
 public:
-    explicit CoreTest(QObject *parent = 0);
+    explicit Test(QObject *parent = 0);
 
 signals:
 

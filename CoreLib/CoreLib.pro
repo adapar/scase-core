@@ -8,7 +8,7 @@ QT       += core xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CoreLib
+TARGET = Lib
 TEMPLATE = lib
 CONFIG += staticlib
 
