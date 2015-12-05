@@ -16,7 +16,7 @@ debug {
 
 QMAKE_LFLAGS += -Wall
 
-TARGET = SCASE
+TARGET = App
 TEMPLATE = app
 
 CONFIG += x86_64
