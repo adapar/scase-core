@@ -1,4 +1,7 @@
 docs
 builds
 sandbox
-*.pro.user
+**/*.user
+**/*.autosave
+*.bak
+output

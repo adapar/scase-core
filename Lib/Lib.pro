@@ -8,7 +8,7 @@ QT       += core xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CoreLib
+TARGET = Lib
 TEMPLATE = lib
 CONFIG += staticlib
 
@@ -32,8 +32,3 @@ HEADERS += \
     interfaces/IBrowserLevel.h \
     interfaces/IBrowserPresentationDelegate.h \
     interfaces/IPlugin.h
-
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
