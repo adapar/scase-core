@@ -7,8 +7,6 @@ set(SCASE_CORE_APP_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/App)
 set(SCASE_CORE_LIB_INCLUDE_PATH ${SCASE_CORE_BASE_PATH}/Lib)
 set(SCASE_CORE_BUILD_PATH ${SCASE_CORE_BASE_PATH}/builds/Release)
 
-configure_file(taste_salad.sh taste_salad.sh COPYONLY)
-
 link_directories(${SCASE_CORE_BUILD_PATH}/Lib)
 include_directories(${SCASE_CORE_APP_INCLUDE_PATH} ${SCASE_CORE_LIB_INCLUDE_PATH})
 
