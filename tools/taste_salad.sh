@@ -3,8 +3,11 @@
 echo "Tasting this delicious cucumber salad..."
 echo
 
-STEPS_BINARY=`pwd`/builds/CucumberSalad/CucumberSteps
+BASE_PATH=`pwd`
+STEPS_BINARY=$BASE_PATH/builds/CucumberSalad/CucumberSteps
 
+cd $BASE_PATH/sandbox/
 $STEPS_BINARY >/dev/null &
-cd `pwd`/CucumberSalad/
+
+cd $BASE_PATH/CucumberSalad/
 cucumber
